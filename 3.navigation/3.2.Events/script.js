@@ -5,6 +5,10 @@ const getElapsedTime = () => {
 }
 
 const clickOnSquare = (e) => {
+  section=document.getElementsByTagName('section')[0];
+  let div=document.createElement('div');
+  div.classList.add("displayedsquare", e.target.classList[1]);
+  section.appendChild(div);
   console.log(e.target.classList[1])
   console.log(getElapsedTime())
 }
@@ -12,5 +16,5 @@ const clickOnSquare = (e) => {
 const actionSquares = document.querySelectorAll('.actionsquare')
 for (let actionSquare of actionSquares) {
   actionSquare.addEventListener('click', clickOnSquare)
+  
 }
-
